@@ -1,5 +1,10 @@
-
-//libraries
+//************************************************
+// fracturing.c
+// Andrew Unseth ID:4699383
+// 9/6/2024
+// COP 3223, Professor Parra
+// This prgram calculates width, height, distance, area, and perimeter for a city 
+// libraries
 #include <stdio.h> 
 #include <math.h>
 
