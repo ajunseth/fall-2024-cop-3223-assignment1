@@ -5,31 +5,34 @@
 // COP 3223, Professor Parra
 // This prgram calculates width, height, distance, area, and perimeter for a city 
 //************************************************
-// libraries
+// libraries 
 #include <stdio.h> 
 #include <math.h>
+
 
 // PI definition
 #define PI 3.14159
 
 // Function Declerations
-double askforuserinput();
+double askForUserInput();
 double calculateDistance();
-double calculatePerimeter(); 
-double calculateArea();
-double calculateWidth(); 
-double calculateHeight();
+void calculatePerimeter(double distance); 
+void calculateArea(double distance);
+void calculateWidth(); 
+void calculateHeight();
 
 //main
-int main(int argc, char **argv) {
- 
-// calling functions
-calculateDistance();
-calculatePerimeter();
-calculateArea();
-calculatewidth();
-calculateHeight(); 
+int main() {
+  double distance;
 
+  distance = calculateDistance(); 
+
+// call functions
+  calculatePerimeter(distance);
+  calculateArea(distance);
+  calculateWidth();
+  calculateHeight();
+ 
 return 0;
 }
 
@@ -64,35 +67,27 @@ return distance; // Return for calculated distance
 }
 
 // perimeter calculation formula
-double calculatePerimeter() {
-  double distance; // varibale for distance
+void calculatePerimeter(double distance) {
   double perimeter; // variable for perimeter
 
-distance = calculateDistance(); // distance between two points
 perimeter = 2 * PI * distance; // calculate perimeter
 
 //print perimeter
 printf("The perimeter of the city encompassed by your request is %.2lf\n", perimeter);
-
-return 1.0; // return statement
 }
 
 // area calculation nformula
-double calculateArea() {
-  double distance; // distance variable
+void calculateArea(double distance) {
   double area; // area variable
 
-distance = calculateDistance(); // distance between points
 area = PI * distance * distance; // calculate area
 
 // print area
 printf("The area of the city encompassed by your request is %.2lf\n", area);
-
-return 2.0; // Return statement
 }
 
 // wicth calculation function
-double calculateWidth() {
+void calculateWidth() {
   double x1, x2, width; // coordinates for width variable
 
 // x-coordinates
@@ -105,11 +100,10 @@ width = fabs(x2 - x1); // calculate width
 printf("Point #1 entered: x1 = %.2lf\n", x1);
 printf("Point #2 entered: x2 = %.2lf\n", x2);
 printf("The width of the city encompasses by your request is %.2lf\n", width);
-
-return 3.0; // return statement
+}
 
 // height calculation formula 
-double calculateHeight() { 
+void calculateHeight() { 
   double y1, y2, height; // height variables
 
 // y-coordinates
@@ -122,6 +116,4 @@ height= fabs(y2 - y1); // height calculation
 printf("Point #1 entered: y1 = %.2lf\n", y1);
 printf("Point #2 entered: y2 = %.2lf\n", y2);
 printf("The height of the city encompassed by your request is %.2lf\n", height);
-
-return 4.0;
 }
